@@ -10,6 +10,7 @@
   "devDependencies": {
     "karma": "^0.12.26",
     "karma-chrome-launcher": "^0.1.5",
+    "karma-coverage": "^0.2.7",
     "karma-jasmine": "^0.2.2"
   },
   "scripts": {

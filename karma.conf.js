@@ -16,33 +16,21 @@ module.exports = function (config) {
     // list of files / patterns to load in the browser
     files: [
       // Vendor
-      'node_modules/angular/angular.js',
-      'node_modules/angular-mocks/angular-mocks.js',
+      'vendor/angular-1.3.5/angular.js',
+      'vendor/angular-1.3.5/angular-mocks.js',
 
       // Libs
-      'public/js/**/*_module.js',
-      'public/js/**/*.js',
+      'js/rxState/**/*_module.js',
+      'js/rxState/**/*.js',
 
       // Tests
-      'test/**/*_spec.js'
+      'test/rxState/**/*_spec.js'
     ],
 
 
     // list of files to exclude
     exclude: [
     ],
-
-
-    // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
-
-
-    // test results reporter to use
-    // possible values: 'dots', 'progress'
-    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
 
 
     // web server port
@@ -69,6 +57,23 @@ module.exports = function (config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: false,
+
+    // coverage reporter generates the coverage
+    reporters: ['progress', 'coverage'],
+
+    preprocessors: {
+      // source files, that you wanna generate coverage for
+      // do not include tests or libraries
+      // (these files will be instrumented by Istanbul)
+      'js/rxState/**/*.js': ['coverage']
+    },
+
+    // optionally, configure the reporter
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    }
+
   });
 };

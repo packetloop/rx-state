@@ -3,7 +3,7 @@
 <head lang="en">
   <meta charset="UTF-8">
   <title>Test</title>
-  <script src="vendor/angular.js"></script>
+  <script src="vendor/angular-1.3.5/angular.js"></script>
   <script src="js/app_module.js"></script>
   <script src="js/rx_states.js"></script>
   <script src="js/main_controller.js"></script>
@@ -15,18 +15,18 @@
 </head>
 <body ng-app="app">
 
-
-
-
+<h2>Example</h2>
 
 <div id="main" ng-controller="MainController as main">
-
   <component3 rx-state="pos = position & test"></component3>
   <component1 rx-state="pos=position"></component1>
   <component2 rx-state="pos=position"></component2>
-
 </div>
 
+
+<h2>Links</h2>
+<h3><a href="./test.html" target="_blank">Tests</a></h3>
+<h3><a href="./coverage/Chrome%2039.0.2171%20(Mac%20OS%20X%2010.10.1)" target="_blank">Coverage&nbsp;report</a></h3>
 
 </body>
 </html>
