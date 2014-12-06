@@ -33,7 +33,7 @@
 
   }
 
-  angular.module('app.rxState').directive('rxState', [
+  angular.module('packetloop.rxState').directive('rxState', [
     'RxStateManagerService', 'RxStateParseQueryValue',
     rxState
   ]);

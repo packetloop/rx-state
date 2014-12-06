@@ -3,7 +3,7 @@ describe('State Manager', function () {
 
   var stateManager;
 
-  beforeEach(module('app.rxState'));
+  beforeEach(module('packetloop.rxState'));
 
 
   beforeEach(inject(function ($injector) {

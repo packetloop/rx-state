@@ -11,7 +11,7 @@
   }
 
 
-  angular.module('app.rxState').value('RxStateParseQueryValue', parse);
+  angular.module('packetloop.rxState').value('RxStateParseQueryValue', parse);
 
 }(angular));
 

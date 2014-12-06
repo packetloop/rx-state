@@ -1,0 +1,9 @@
+{
+  "name": "rx-state",
+  "version": "1.0.0",
+  "main": "./rx-state.js",
+  "ignore": [],
+  "dependencies": {
+    "angular": "1.3.5"
+  }
+}

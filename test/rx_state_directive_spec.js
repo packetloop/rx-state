@@ -4,7 +4,7 @@ describe('State Directive', function () {
   var template = '<div rx-state="myState" rx-state-isolate></div>',
     $stateMananger, $rootScope, $compile, $isolateScope, $scope, $element;
 
-  beforeEach(module('app.rxState'));
+  beforeEach(module('packetloop.rxState'));
 
 
   beforeEach(inject(function ($injector) {

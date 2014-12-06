@@ -75,7 +75,7 @@
   };
 
 
-  angular.module('app.rxState').service('RxStateManagerService', [
+  angular.module('packetloop.rxState').service('RxStateManagerService', [
     RxStateManagerService
   ]);
 

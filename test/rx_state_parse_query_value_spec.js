@@ -3,7 +3,7 @@ describe('Parse query', function () {
 
   var parse;
 
-  beforeEach(module('app.rxState'));
+  beforeEach(module('packetloop.rxState'));
 
   beforeEach(inject(function ($injector) {
     parse = $injector.get('RxStateParseQueryValue');

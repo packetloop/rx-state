@@ -8,7 +8,7 @@
     }
   }
 
-  angular.module('app.rxState').directive('rxStateIsolate', rxStateIsolate);
+  angular.module('packetloop.rxState').directive('rxStateIsolate', rxStateIsolate);
 }(angular));
 
 
