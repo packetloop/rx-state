@@ -1,20 +1,27 @@
 (function (angular) {
   'use strict';
 
-  function rxState(stateManager) {
+  function rxState(stateManager, parseQuery) {
 
     function link($scope, $element, $attrs) {
-      var name = $attrs.rxState,
-        $isolateScope = $element.isolateScope();
+      var query = parseQuery($attrs.rxState);
+      var $isolateScope = $element.isolateScope();
+      var name;
+      var value;
 
 
       if (!$isolateScope) {
         throw new Error('Must be used on directive with isolated scope');
       }
-      if ($isolateScope[name] !== undefined && typeof($isolateScope[name]) !== 'object') {
-        throw new Error('State must be and object');
+      for (name in query) {
+        if (query.hasOwnProperty(name)) {
+          value = query[name] || name;
+          if ($isolateScope[name] !== undefined && typeof($isolateScope[name]) !== 'object') {
+            throw new Error('State must be and object');
+          }
+          $isolateScope[name] = stateManager.get(value);
+        }
       }
-      $isolateScope[name] = stateManager.get(name);
     }
 
 
@@ -27,7 +34,7 @@
   }
 
   angular.module('app.rxState').directive('rxState', [
-    'RxStateManagerService',
+    'RxStateManagerService', 'RxStateParseQueryValue',
     rxState
   ]);
 }(angular));

@@ -11,6 +11,7 @@
   <script src="js/rxState/rx_state_directive.js"></script>
   <script src="js/rxState/rx_state_isolate_directive.js"></script>
   <script src="js/rxState/rx_state_manager_service.js"></script>
+  <script src="js/rxState/rx_state_parse_query_value.js"></script>
 </head>
 <body ng-app="app">
 
@@ -20,11 +21,9 @@
 
 <div id="main" ng-controller="MainController as main">
 
-  <component3 rx-state="position"></component3>
-
-  <component1 rx-state="position"></component1>
-  <component2 rx-state="position"></component2>
-
+  <component3 rx-state="pos = position & test"></component3>
+  <component1 rx-state="pos=position"></component1>
+  <component2 rx-state="pos=position"></component2>
 
 </div>
 

@@ -19,7 +19,6 @@ angular.module('app')
       scope: {
       },
       link: function($scope, $element, $attr) {
-        $scope.pos = $scope[$attr.rxState];
         console.log("component1: $attr.rxState, $scope.pos", $attr.rxState, $scope.pos);
       }
     }
@@ -32,7 +31,6 @@ angular.module('app')
       scope: {
       },
       link: function($scope, $element, $attr) {
-        $scope.pos = $scope[$attr.rxState];
         console.log("component2: $attr.rxState, $scope.pos", $attr.rxState, $scope.pos);
       }
     }
@@ -41,11 +39,13 @@ angular.module('app')
   .directive('component3', function () {
 
     return {
-      template: '<input value="{{pos.x}}" type="range" ng-model="pos.x" min="0" max="10" step="1" />',
+      template: [
+        '<span>{{test.hello}}</span>',
+        '<input value="{{pos.x}}" type="range" ng-model="pos.x" min="0" max="10" step="1" />'
+      ].join(''),
       scope: {
       },
       link: function($scope, $element, $attr) {
-        $scope.pos = $scope[$attr.rxState];
         console.log("component3: $attr.rxState, $scope.pos", $attr.rxState, $scope.pos);
       }
     }

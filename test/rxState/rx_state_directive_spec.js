@@ -15,6 +15,9 @@ describe('State Directive', function () {
     $stateMananger.init({
       myState: {
         x: null
+      },
+      anotherState: {
+        y: 123
       }
     });
 
@@ -45,6 +48,28 @@ describe('State Directive', function () {
 
     $isolateScope2.myState.x = 2;
     expect($isolateScope.myState).toEqual({x: 2});
+  });
+
+  it('should assign state particular key', function() {
+    var template = '<div rx-state="test = myState" rx-state-isolate></div>';
+    var $scope = $rootScope.$new();
+    var $element = $compile(template)($scope);
+    var $isolateScope = $element.isolateScope();
+    $scope.$digest();
+
+    expect($isolateScope.test).toEqual({x: null});
+  });
+
+
+  it('should assign multiple states', function() {
+    var template = '<div rx-state="test = myState & anotherState" rx-state-isolate></div>';
+    var $scope = $rootScope.$new();
+    var $element = $compile(template)($scope);
+    var $isolateScope = $element.isolateScope();
+    $scope.$digest();
+
+    expect($isolateScope.test).toEqual({x: null});
+    expect($isolateScope.anotherState).toEqual({y: 123});
   });
 
 
