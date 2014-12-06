@@ -1,6 +1,6 @@
 var nodeStatic = require('node-static');
 var fs = require('fs');
-var file = new nodeStatic.Server('./public');
+var file = new nodeStatic.Server('./public', {cache: false});
 
 require('http').createServer(function (request, response) {
   request.addListener('end', function () {
