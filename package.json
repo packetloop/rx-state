@@ -1,6 +1,6 @@
 {
   "name": "rx-state",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reactive state for custom Angular directives",
   "main": "index.js",
   "dependencies": {},
